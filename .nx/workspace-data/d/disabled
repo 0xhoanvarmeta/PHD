@@ -1,0 +1,26 @@
+Daemon process terminated and closed the connection
+
+Messages from the log:
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.446Z - Closed a connection. Number of open connections: 0
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.453Z - Established a connection. Number of open connections: 1
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.454Z - Established a connection. Number of open connections: 2
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.454Z - Closed a connection. Number of open connections: 1
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.455Z - Received raw message of length 32
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.455Z - Received json message of type REQUEST_PROJECT_GRAPH
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.455Z - [REQUEST]: Client Request for Project Graph Received
+Time for 'plugin worker 64206 code loading' 1.9566670000000013
+Time for 'plugin worker 64207 code loading' 1.8262089999999986
+Time for 'plugin worker 64209 code loading' 1.8417080000000006
+Time for 'plugin worker 64208 code loading' 1.8721669999999992
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.562Z - Time taken for 'Load Nx Plugin: /Users/hoanjen/PHD/node_modules/.pnpm/nx@22.2.3_@swc-node+register@1.9.2_@swc+core@1.5.29_@swc+helpers@0.5.17__@swc+types@0.1_5f17a7e609b2ee3c59ed59042b3f042e/node_modules/nx/src/plugins/package-json' 140.12287500000002ms
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.566Z - Time taken for 'Load Nx Plugin: /Users/hoanjen/PHD/node_modules/.pnpm/nx@22.2.3_@swc-node+register@1.9.2_@swc+core@1.5.29_@swc+helpers@0.5.17__@swc+types@0.1_5f17a7e609b2ee3c59ed59042b3f042e/node_modules/nx/src/plugins/project-json/build-nodes/project-json' 144.33570799999995ms
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.569Z - Time taken for 'loadDefaultNxPlugins' 147.00416600000005ms
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.571Z - Started listening on: /private/var/folders/l7/h6wx5q113j10j4nzrh_sj4nw0000gn/T/7ab5f24f7fb090df4924/d.sock
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.572Z - [WATCHER]: Subscribed to changes within: /Users/hoanjen/PHD (native)
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.573Z - [NX-CONSOLE]: Pulling latest Nx (latest) to check console status...
+Fetching nx...
+[NX v22.2.3 Daemon Server] - 2025-12-14T07:52:25.589Z - Closed a connection. Number of open connections: 0
+
+
+
+More information: /Users/hoanjen/PHD/.nx/workspace-data/d/daemon.log

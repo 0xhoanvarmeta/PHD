@@ -1,0 +1,79 @@
+{
+  "name": "smart-contract",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/smart-contract/src",
+  "projectType": "application",
+  "tags": ["type:app", "scope:blockchain"],
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "forge build",
+        "cwd": "apps/smart-contract"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "forge test -vvv",
+        "cwd": "apps/smart-contract"
+      }
+    },
+    "test:watch": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "forge test --watch",
+        "cwd": "apps/smart-contract"
+      }
+    },
+    "coverage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "forge coverage",
+        "cwd": "apps/smart-contract"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "forge script script/Deploy.s.sol --rpc-url ${RPC_URL} --broadcast --verify",
+        "cwd": "apps/smart-contract"
+      }
+    },
+    "deploy:local": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "forge script script/Deploy.s.sol --rpc-url http://localhost:8545 --broadcast",
+        "cwd": "apps/smart-contract"
+      }
+    },
+    "clean": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "forge clean",
+        "cwd": "apps/smart-contract"
+      }
+    },
+    "verify": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./verify.sh ${CONTRACT_ADDRESS} testnet",
+        "cwd": "apps/smart-contract"
+      }
+    },
+    "verify:mainnet": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "./verify.sh ${CONTRACT_ADDRESS} mainnet",
+        "cwd": "apps/smart-contract"
+      }
+    },
+    "verify:info": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "forge script script/Verify.s.sol",
+        "cwd": "apps/smart-contract"
+      }
+    }
+  }
+}

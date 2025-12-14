@@ -1,0 +1,1083 @@
+{
+  "version": "6.0",
+  "nxVersion": "22.2.3",
+  "pathMappings": {
+    "@phd/shared": [
+      "libs/shared/src/index.ts"
+    ],
+    "shared": [
+      "libs/shared/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps",
+        "serveStaticTargetName": "serve-static"
+      }
+    },
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "name": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    }
+  ],
+  "fileMap": {
+    "projectFileMap": {
+      "backend-e2e": [
+        {
+          "file": "apps/backend-e2e/jest.config.cts",
+          "hash": "12651683113746769452"
+        },
+        {
+          "file": "apps/backend-e2e/project.json",
+          "hash": "6429579147942912193"
+        },
+        {
+          "file": "apps/backend-e2e/src/backend/backend.spec.ts",
+          "hash": "110394728024017389",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/backend-e2e/src/support/global-setup.ts",
+          "hash": "10817858795115919263",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/backend-e2e/src/support/global-teardown.ts",
+          "hash": "14210317125869451873",
+          "deps": [
+            "npm:@nx/node"
+          ]
+        },
+        {
+          "file": "apps/backend-e2e/src/support/test-setup.ts",
+          "hash": "15521797170623961900",
+          "deps": [
+            "npm:axios"
+          ]
+        },
+        {
+          "file": "apps/backend-e2e/tsconfig.json",
+          "hash": "15443990093475294480"
+        },
+        {
+          "file": "apps/backend-e2e/tsconfig.spec.json",
+          "hash": "14954872453723519891"
+        }
+      ],
+      "shared": [
+        {
+          "file": "libs/shared/README.md",
+          "hash": "4013336366747760891"
+        },
+        {
+          "file": "libs/shared/eslint.config.mjs",
+          "hash": "4313095032450400554",
+          "deps": [
+            [
+              "npm:jsonc-eslint-parser",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "libs/shared/jest.config.cts",
+          "hash": "3142241766365537684"
+        },
+        {
+          "file": "libs/shared/package.json",
+          "hash": "7413960783536880558",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "libs/shared/project.json",
+          "hash": "10797705577286188982"
+        },
+        {
+          "file": "libs/shared/src/index.ts",
+          "hash": "4974268870758318992"
+        },
+        {
+          "file": "libs/shared/src/lib/abis/DeviceControl.json",
+          "hash": "8494570176488264451"
+        },
+        {
+          "file": "libs/shared/src/lib/abis/DeviceControl.ts",
+          "hash": "7416213219609713011"
+        },
+        {
+          "file": "libs/shared/src/lib/abis/index.ts",
+          "hash": "13420563231408827753"
+        },
+        {
+          "file": "libs/shared/src/lib/constants/index.ts",
+          "hash": "18087934532075123466"
+        },
+        {
+          "file": "libs/shared/src/lib/shared.spec.ts",
+          "hash": "10294249502165281269"
+        },
+        {
+          "file": "libs/shared/src/lib/shared.ts",
+          "hash": "3815621113879200261"
+        },
+        {
+          "file": "libs/shared/src/lib/types/api.types.ts",
+          "hash": "6682949065481229051"
+        },
+        {
+          "file": "libs/shared/src/lib/types/blockchain.types.ts",
+          "hash": "7026530756023325572"
+        },
+        {
+          "file": "libs/shared/src/lib/types/command.types.ts",
+          "hash": "6557281951847869429"
+        },
+        {
+          "file": "libs/shared/tsconfig.json",
+          "hash": "12975668481162286788"
+        },
+        {
+          "file": "libs/shared/tsconfig.lib.json",
+          "hash": "13731893420473560347"
+        },
+        {
+          "file": "libs/shared/tsconfig.spec.json",
+          "hash": "11011431583980985399"
+        }
+      ],
+      "backend": [
+        {
+          "file": "apps/backend/nodemon.json",
+          "hash": "42820616803117150"
+        },
+        {
+          "file": "apps/backend/project.json",
+          "hash": "16729620866600328285"
+        },
+        {
+          "file": "apps/backend/src/app/admin/admin.module.ts",
+          "hash": "12408774613506589142",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/admin/admin.service.ts",
+          "hash": "9438798554653514747",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/admin/entities/admin.entity.ts",
+          "hash": "1311342687578474848",
+          "deps": [
+            "npm:typeorm",
+            "npm:class-transformer"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/app.controller.ts",
+          "hash": "15276891910009544695",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/app.module.ts",
+          "hash": "5308910763453251711",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/core"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/app.service.ts",
+          "hash": "9967902337593410053",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/auth/auth.controller.ts",
+          "hash": "18080456371542799324",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/auth/auth.module.ts",
+          "hash": "17361096792637916848",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/jwt",
+            "npm:@nestjs/passport",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/auth/auth.service.ts",
+          "hash": "13998204783193071824",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/jwt",
+            "npm:bcrypt"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/auth/decorators/current-admin.decorator.ts",
+          "hash": "15444927714498184202",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/auth/decorators/public.decorator.ts",
+          "hash": "17960535925631508594",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/auth/dto/login.dto.ts",
+          "hash": "4017697172928466253",
+          "deps": [
+            "npm:class-validator",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/auth/guards/jwt-auth.guard.ts",
+          "hash": "17830907664554040728",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/passport"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/auth/strategies/jwt.strategy.ts",
+          "hash": "11516270025454673300",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:@nestjs/passport",
+            "npm:passport-jwt"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/blockchain/blockchain.module.ts",
+          "hash": "3070031519068916591",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/blockchain/blockchain.service.ts",
+          "hash": "14403312766518261193",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/config",
+            "npm:ethers",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/commands/commands.controller.ts",
+          "hash": "18041353025321834551",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/commands/commands.module.ts",
+          "hash": "9871221351778462725",
+          "deps": [
+            "npm:@nestjs/common"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/commands/commands.service.ts",
+          "hash": "14709067257215628472",
+          "deps": [
+            "npm:@nestjs/common",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/database/config/typeorm.config.ts",
+          "hash": "9977712370171000885",
+          "deps": [
+            "npm:@nestjs/config",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/database/database.module.ts",
+          "hash": "12391112949972081482",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:@nestjs/config"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/database/migrations/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/backend/src/app/database/migrations/1702000000000-InitialSchema.ts",
+          "hash": "14117671074364517027",
+          "deps": [
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/database/seeds/admin.seed.ts",
+          "hash": "5540682634727998049",
+          "deps": [
+            "npm:typeorm",
+            "npm:bcrypt"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/database/seeds/run-seeds.ts",
+          "hash": "16310164874551705021",
+          "deps": [
+            "npm:reflect-metadata",
+            "npm:dotenv"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/events/dto/query-events.dto.ts",
+          "hash": "9758945257480936495",
+          "deps": [
+            "npm:class-validator",
+            "npm:class-transformer",
+            "npm:@nestjs/swagger",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/events/entities/event-log.entity.ts",
+          "hash": "93036697567697497",
+          "deps": [
+            "npm:typeorm",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/events/events.controller.ts",
+          "hash": "1898269655747344084",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/events/events.module.ts",
+          "hash": "7892757332876986071",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/events/events.service.ts",
+          "hash": "2393772540397014055",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/scripts/dto/create-script.dto.ts",
+          "hash": "7509411815867503956",
+          "deps": [
+            "npm:class-validator",
+            "npm:class-transformer",
+            "npm:@nestjs/swagger",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/scripts/dto/query-scripts.dto.ts",
+          "hash": "4044354809484422103",
+          "deps": [
+            "npm:class-validator",
+            "npm:class-transformer",
+            "npm:@nestjs/swagger",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/scripts/dto/update-script.dto.ts",
+          "hash": "18365487483384618182",
+          "deps": [
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/scripts/entities/script.entity.ts",
+          "hash": "11018628818071863868",
+          "deps": [
+            "npm:typeorm",
+            "shared"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/scripts/scripts.controller.ts",
+          "hash": "5760095317200504101",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/scripts/scripts.module.ts",
+          "hash": "12631822846440882779",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/app/scripts/scripts.service.ts",
+          "hash": "5066048372747460329",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/typeorm",
+            "npm:typeorm"
+          ]
+        },
+        {
+          "file": "apps/backend/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/backend/src/main.ts",
+          "hash": "9077798852152136431",
+          "deps": [
+            "npm:@nestjs/common",
+            "npm:@nestjs/core",
+            "npm:@nestjs/swagger"
+          ]
+        },
+        {
+          "file": "apps/backend/tsconfig.app.json",
+          "hash": "11777357029809942538"
+        },
+        {
+          "file": "apps/backend/tsconfig.json",
+          "hash": "3025378044812449119"
+        },
+        {
+          "file": "apps/backend/webpack.config.js",
+          "hash": "9430280742599281905",
+          "deps": [
+            "npm:@nx/webpack"
+          ]
+        }
+      ],
+      "smart-contract": [
+        {
+          "file": "apps/smart-contract/.env.example",
+          "hash": "1621297289564613802"
+        },
+        {
+          "file": "apps/smart-contract/QUICKSTART_VERIFY.md",
+          "hash": "7628225653138777402"
+        },
+        {
+          "file": "apps/smart-contract/README.md",
+          "hash": "9095845243912862542"
+        },
+        {
+          "file": "apps/smart-contract/VERIFY.md",
+          "hash": "16444382767086182895"
+        },
+        {
+          "file": "apps/smart-contract/broadcast/Deploy.s.sol/296/run-1765699864.json",
+          "hash": "14462741867789283344"
+        },
+        {
+          "file": "apps/smart-contract/broadcast/Deploy.s.sol/296/run-latest.json",
+          "hash": "14462741867789283344"
+        },
+        {
+          "file": "apps/smart-contract/cache/Deploy.s.sol/296/run-1765699864.json",
+          "hash": "8107452170413709289"
+        },
+        {
+          "file": "apps/smart-contract/cache/Deploy.s.sol/296/run-latest.json",
+          "hash": "8107452170413709289"
+        },
+        {
+          "file": "apps/smart-contract/cache/solidity-files-cache.json",
+          "hash": "15058636196345106389"
+        },
+        {
+          "file": "apps/smart-contract/export-abi.sh",
+          "hash": "16570804233122886127"
+        },
+        {
+          "file": "apps/smart-contract/foundry.toml",
+          "hash": "12566034316438647043"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/.gitattributes",
+          "hash": "372701395918495307"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/.github/CODEOWNERS",
+          "hash": "17337408592751349167"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/.github/dependabot.yml",
+          "hash": "6706314792401665016"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/.github/workflows/ci.yml",
+          "hash": "10972512857459630561"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/.github/workflows/sync.yml",
+          "hash": "4335591552362903370"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/.gitignore",
+          "hash": "1726114465837318867"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/CONTRIBUTING.md",
+          "hash": "4562826315675646329"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/LICENSE-APACHE",
+          "hash": "8645871963587928210"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/LICENSE-MIT",
+          "hash": "7371318378930887479"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/README.md",
+          "hash": "8581564169205144294"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/RELEASE_CHECKLIST.md",
+          "hash": "3513724789579459827"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/foundry.toml",
+          "hash": "14139355382710445340"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/package.json",
+          "hash": "4980242892847853511"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/scripts/vm.py",
+          "hash": "505379761777677936"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/Base.sol",
+          "hash": "10989024092619552676"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/Config.sol",
+          "hash": "13950182993154283134"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/LibVariable.sol",
+          "hash": "16897517368415158445"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/Script.sol",
+          "hash": "17406105203327739795"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdAssertions.sol",
+          "hash": "775135163046942580"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdChains.sol",
+          "hash": "1558705508331291922"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdCheats.sol",
+          "hash": "17355700144506838618"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdConfig.sol",
+          "hash": "14294348817649849003"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdConstants.sol",
+          "hash": "9448866166948735420"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdError.sol",
+          "hash": "10344154906114952219"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdInvariant.sol",
+          "hash": "15518535022054616794"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdJson.sol",
+          "hash": "18042118806495492791"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdMath.sol",
+          "hash": "3865265158031837721"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdStorage.sol",
+          "hash": "17210682767706115930"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdStyle.sol",
+          "hash": "14082627603262244210"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdToml.sol",
+          "hash": "983310277933259173"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/StdUtils.sol",
+          "hash": "1306233022700627122"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/Test.sol",
+          "hash": "3572747456612695720"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/Vm.sol",
+          "hash": "56112038366385409"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/console.sol",
+          "hash": "15016881073650539151"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/console2.sol",
+          "hash": "3719394341143225763"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/interfaces/IERC1155.sol",
+          "hash": "14723046810725992279"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/interfaces/IERC165.sol",
+          "hash": "2855112354006165316"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/interfaces/IERC20.sol",
+          "hash": "7403982103666888698"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/interfaces/IERC4626.sol",
+          "hash": "13170375568486320369"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/interfaces/IERC6909.sol",
+          "hash": "542799467983187984"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/interfaces/IERC721.sol",
+          "hash": "5255287759460670333"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/interfaces/IERC7540.sol",
+          "hash": "3097991654280023496"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/interfaces/IERC7575.sol",
+          "hash": "18405058517071779654"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/interfaces/IMulticall3.sol",
+          "hash": "2125655351323139442"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/src/safeconsole.sol",
+          "hash": "11696896099959823444"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/CommonBase.t.sol",
+          "hash": "14274881884788586948"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/Config.t.sol",
+          "hash": "2409092232610311196"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/LibVariable.t.sol",
+          "hash": "7376989711545284159"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdAssertions.t.sol",
+          "hash": "10037100829737845378"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdChains.t.sol",
+          "hash": "6782230744909573544"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdCheats.t.sol",
+          "hash": "13473113107448451052"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdConstants.t.sol",
+          "hash": "400813594197710126"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdError.t.sol",
+          "hash": "7373360372494013730"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdJson.t.sol",
+          "hash": "9390686079733590859"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdMath.t.sol",
+          "hash": "11127204388162688145"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdStorage.t.sol",
+          "hash": "10640103304691064316"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdStyle.t.sol",
+          "hash": "5677976404277546201"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdToml.t.sol",
+          "hash": "15927585258986985856"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/StdUtils.t.sol",
+          "hash": "4253563730312107784"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/Vm.t.sol",
+          "hash": "939233272130427058"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/compilation/CompilationScript.sol",
+          "hash": "3322407806167149733"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/compilation/CompilationScriptBase.sol",
+          "hash": "600697824521498653"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/compilation/CompilationTest.sol",
+          "hash": "6398685911055251953"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/compilation/CompilationTestBase.sol",
+          "hash": "12752955696266891668"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/fixtures/broadcast.log.json",
+          "hash": "14073872679017582533"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/fixtures/config.toml",
+          "hash": "10876773646988426288"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/fixtures/test.json",
+          "hash": "5836202662042014898"
+        },
+        {
+          "file": "apps/smart-contract/lib/forge-std/test/fixtures/test.toml",
+          "hash": "17585427752481793083"
+        },
+        {
+          "file": "apps/smart-contract/out/Base.sol/CommonBase.json",
+          "hash": "92936984406852855"
+        },
+        {
+          "file": "apps/smart-contract/out/Base.sol/ScriptBase.json",
+          "hash": "5010560325733826366"
+        },
+        {
+          "file": "apps/smart-contract/out/Base.sol/TestBase.json",
+          "hash": "5610133386560321219"
+        },
+        {
+          "file": "apps/smart-contract/out/Counter.s.sol/CounterScript.json",
+          "hash": "5684056411912438470"
+        },
+        {
+          "file": "apps/smart-contract/out/Counter.sol/Counter.json",
+          "hash": "9692013734183215327"
+        },
+        {
+          "file": "apps/smart-contract/out/Counter.t.sol/CounterTest.json",
+          "hash": "11837599731697296972"
+        },
+        {
+          "file": "apps/smart-contract/out/Deploy.s.sol/DeployScript.json",
+          "hash": "3328859228514208032"
+        },
+        {
+          "file": "apps/smart-contract/out/DeviceControl.sol/DeviceControl.json",
+          "hash": "373136536223878583"
+        },
+        {
+          "file": "apps/smart-contract/out/DeviceControl.t.sol/DeviceControlTest.json",
+          "hash": "5969359955110881933"
+        },
+        {
+          "file": "apps/smart-contract/out/IMulticall3.sol/IMulticall3.json",
+          "hash": "1795111346417431358"
+        },
+        {
+          "file": "apps/smart-contract/out/Script.sol/Script.json",
+          "hash": "14363781698052296788"
+        },
+        {
+          "file": "apps/smart-contract/out/StdAssertions.sol/StdAssertions.json",
+          "hash": "3809286434779615549"
+        },
+        {
+          "file": "apps/smart-contract/out/StdChains.sol/StdChains.json",
+          "hash": "11140470717846792332"
+        },
+        {
+          "file": "apps/smart-contract/out/StdCheats.sol/StdCheats.json",
+          "hash": "12789637150363119484"
+        },
+        {
+          "file": "apps/smart-contract/out/StdCheats.sol/StdCheatsSafe.json",
+          "hash": "12593652608369357386"
+        },
+        {
+          "file": "apps/smart-contract/out/StdConstants.sol/StdConstants.json",
+          "hash": "5209171341007610606"
+        },
+        {
+          "file": "apps/smart-contract/out/StdError.sol/stdError.json",
+          "hash": "13276312584153235179"
+        },
+        {
+          "file": "apps/smart-contract/out/StdInvariant.sol/StdInvariant.json",
+          "hash": "14032353096331982111"
+        },
+        {
+          "file": "apps/smart-contract/out/StdJson.sol/stdJson.json",
+          "hash": "16126887864199123121"
+        },
+        {
+          "file": "apps/smart-contract/out/StdMath.sol/stdMath.json",
+          "hash": "16736728762045875666"
+        },
+        {
+          "file": "apps/smart-contract/out/StdStorage.sol/stdStorage.json",
+          "hash": "16955168590108608280"
+        },
+        {
+          "file": "apps/smart-contract/out/StdStorage.sol/stdStorageSafe.json",
+          "hash": "8610652126245947033"
+        },
+        {
+          "file": "apps/smart-contract/out/StdStyle.sol/StdStyle.json",
+          "hash": "6173045279280254184"
+        },
+        {
+          "file": "apps/smart-contract/out/StdToml.sol/stdToml.json",
+          "hash": "3382477167963220140"
+        },
+        {
+          "file": "apps/smart-contract/out/StdUtils.sol/StdUtils.json",
+          "hash": "4665292623460555052"
+        },
+        {
+          "file": "apps/smart-contract/out/Test.sol/Test.json",
+          "hash": "17467345069413584409"
+        },
+        {
+          "file": "apps/smart-contract/out/Verify.s.sol/VerifyScript.json",
+          "hash": "9529448781385718046"
+        },
+        {
+          "file": "apps/smart-contract/out/Vm.sol/Vm.json",
+          "hash": "2321275049460197868"
+        },
+        {
+          "file": "apps/smart-contract/out/Vm.sol/VmSafe.json",
+          "hash": "7660795331050691127"
+        },
+        {
+          "file": "apps/smart-contract/out/build-info/28db89d73783c637eb854a37b43e083a.json",
+          "hash": "5195521866849182464"
+        },
+        {
+          "file": "apps/smart-contract/out/build-info/b83451b00869acae4be65d4c14f604d3.json",
+          "hash": "9631300149255894347"
+        },
+        {
+          "file": "apps/smart-contract/out/console.sol/console.json",
+          "hash": "10189490210832036919"
+        },
+        {
+          "file": "apps/smart-contract/out/safeconsole.sol/safeconsole.json",
+          "hash": "13520298185200236265"
+        },
+        {
+          "file": "apps/smart-contract/project.json",
+          "hash": "9103916704366283671"
+        },
+        {
+          "file": "apps/smart-contract/script/Counter.s.sol",
+          "hash": "898803572951735893"
+        },
+        {
+          "file": "apps/smart-contract/script/Deploy.s.sol",
+          "hash": "12664364602932606177"
+        },
+        {
+          "file": "apps/smart-contract/script/Verify.s.sol",
+          "hash": "8528250586728529673"
+        },
+        {
+          "file": "apps/smart-contract/src/Counter.sol",
+          "hash": "1272575550349786961"
+        },
+        {
+          "file": "apps/smart-contract/src/DeviceControl.sol",
+          "hash": "2748918137963825255"
+        },
+        {
+          "file": "apps/smart-contract/test/Counter.t.sol",
+          "hash": "12133880313166722153"
+        },
+        {
+          "file": "apps/smart-contract/test/DeviceControl.t.sol",
+          "hash": "13831329390636079579"
+        },
+        {
+          "file": "apps/smart-contract/verify.sh",
+          "hash": "8418606548636038676"
+        }
+      ]
+    },
+    "nonProjectFiles": [
+      {
+        "file": ".dockerignore",
+        "hash": "8888420485729509144"
+      },
+      {
+        "file": ".env.docker",
+        "hash": "3194300855053611062"
+      },
+      {
+        "file": ".env.example",
+        "hash": "741962850981024142"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "4510553539812542097"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "14688272390704683536"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "6610267449547771530"
+      },
+      {
+        "file": "Dockerfile.backend",
+        "hash": "310359012473614900"
+      },
+      {
+        "file": "GETTING_STARTED.md",
+        "hash": "12965161537630026046"
+      },
+      {
+        "file": "README.docker.md",
+        "hash": "7365697353733887133"
+      },
+      {
+        "file": "README.md",
+        "hash": "2708058339264113079"
+      },
+      {
+        "file": "docker-compose.yml",
+        "hash": "85761070394704760"
+      },
+      {
+        "file": "eslint.config.mjs",
+        "hash": "12926286793420397906"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "6870352021923392442"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "nx.json",
+        "hash": "250403973893575831"
+      },
+      {
+        "file": "package.json",
+        "hash": "2903716598666575826"
+      },
+      {
+        "file": "pnpm-lock.yaml",
+        "hash": "4934993046305595505"
+      },
+      {
+        "file": "pnpm-workspace.yaml",
+        "hash": "3364563017719869349"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "18035043398195419584"
+      }
+    ]
+  },
+  "externalNodesHash": "733041220490026735"
+}
