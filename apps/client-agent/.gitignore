@@ -1,0 +1,32 @@
+# Binaries
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+client-agent
+client-agent-*
+
+# Test binary
+*.test
+
+# Output
+*.out
+dist/
+build/
+
+# Go workspace file
+go.work
+
+# Environment
+.env
+
+# Logs
+*.log
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
