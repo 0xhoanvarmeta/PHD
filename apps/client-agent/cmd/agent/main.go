@@ -90,6 +90,12 @@ func main() {
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
 
+	// Check for latest unexecuted command on startup
+	logger.Log.Info("Checking for pending commands from previous session...")
+	if err := poller.CheckLatestUnexecutedCommand(ctx); err != nil {
+		logger.Log.WithError(err).Warn("Failed to check for latest unexecuted command")
+	}
+
 	// Setup signal handling for graceful shutdown
 	sigChan := make(chan os.Signal, 1)
 	signal.Notify(sigChan, os.Interrupt, syscall.SIGTERM)

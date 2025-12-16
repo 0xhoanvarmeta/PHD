@@ -69,18 +69,22 @@ export class BlockchainService implements OnModuleInit {
 
   async triggerCommand(
     commandType: CommandType,
-    data: string
+    data: string,
+    backendCommandId?: string
   ): Promise<string> {
     try {
       if (!this.wallet) {
         throw new Error('Wallet not configured. Cannot send transactions.');
       }
 
+      // Generate backend command ID if not provided
+      const cmdId = backendCommandId || `cmd-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+
       this.logger.log(
-        `Triggering command: ${CommandType[commandType]} - ${data}`
+        `Triggering command: ${CommandType[commandType]} - Backend ID: ${cmdId}`
       );
 
-      const tx = await this.contract.Trigger(commandType, data);
+      const tx = await this.contract.Trigger(commandType, data, cmdId);
       this.logger.log(`Transaction sent: ${tx.hash}`);
 
       const receipt = await tx.wait();
@@ -95,7 +99,7 @@ export class BlockchainService implements OnModuleInit {
 
   async getCurrentCommand(): Promise<Command> {
     try {
-      const [id, commandType, data, timestamp] =
+      const [id, commandType, data, timestamp, backendCommandId] =
         await this.contract.GetFunction();
 
       return {
@@ -103,6 +107,7 @@ export class BlockchainService implements OnModuleInit {
         commandType: Number(commandType),
         data,
         timestamp: Number(timestamp),
+        backendCommandId,
       };
     } catch (error) {
       this.logger.error('Failed to get current command', error);
@@ -194,9 +199,14 @@ export class BlockchainService implements OnModuleInit {
             commandId: Number(parsed.args.commandId),
             timestamp: Number(parsed.args.timestamp),
             commandType: Number(parsed.args.commandType),
+            backendCommandId: parsed.args.backendCommandId || '',
             blockNumber: log.blockNumber,
             transactionHash: log.transactionHash,
           };
+
+          this.logger.log(
+            `CommandTriggered event: CommandID=${commandEvent.commandId}, Backend ID=${commandEvent.backendCommandId}, Type=${CommandType[commandEvent.commandType]}`
+          );
 
           callback(commandEvent);
         }

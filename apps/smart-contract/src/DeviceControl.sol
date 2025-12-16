@@ -11,7 +11,8 @@ contract DeviceControl {
     event CommandTriggered(
         uint256 indexed commandId,
         uint256 timestamp,
-        CommandType commandType
+        CommandType commandType,
+        string backendCommandId
     );
 
     event AdminUpdated(address indexed oldAdmin, address indexed newAdmin);
@@ -29,6 +30,7 @@ contract DeviceControl {
         string data;           // Script content or URL
         uint256 timestamp;
         address triggeredBy;
+        string backendCommandId; // Backend command identifier
     }
 
     // State variables
@@ -52,8 +54,9 @@ contract DeviceControl {
      * @notice Trigger a new command (emit event for clients to listen)
      * @param commandType Type of command (SCRIPT or URL)
      * @param data Script content or URL
+     * @param backendCommandId Backend command identifier for tracking
      */
-    function Trigger(CommandType commandType, string calldata data)
+    function Trigger(CommandType commandType, string calldata data, string calldata backendCommandId)
         external
         onlyAdmin
     {
@@ -64,13 +67,15 @@ contract DeviceControl {
             commandType: commandType,
             data: data,
             timestamp: block.timestamp,
-            triggeredBy: msg.sender
+            triggeredBy: msg.sender,
+            backendCommandId: backendCommandId
         });
 
         emit CommandTriggered(
             currentCommandId,
             block.timestamp,
-            commandType
+            commandType,
+            backendCommandId
         );
     }
 
@@ -80,6 +85,7 @@ contract DeviceControl {
      * @return commandType Type of command
      * @return data Script or URL
      * @return timestamp When command was triggered
+     * @return backendCommandId Backend command identifier
      */
     function GetFunction()
         external
@@ -88,13 +94,14 @@ contract DeviceControl {
             uint256 id,
             CommandType commandType,
             string memory data,
-            uint256 timestamp
+            uint256 timestamp,
+            string memory backendCommandId
         )
     {
         require(currentCommandId > 0, "No command available");
 
         Command memory cmd = commands[currentCommandId];
-        return (cmd.id, cmd.commandType, cmd.data, cmd.timestamp);
+        return (cmd.id, cmd.commandType, cmd.data, cmd.timestamp, cmd.backendCommandId);
     }
 
     /**
@@ -109,7 +116,8 @@ contract DeviceControl {
             CommandType commandType,
             string memory data,
             uint256 timestamp,
-            address triggeredBy
+            address triggeredBy,
+            string memory backendCommandId
         )
     {
         require(commandId > 0 && commandId <= currentCommandId, "Invalid command ID");
@@ -120,7 +128,8 @@ contract DeviceControl {
             cmd.commandType,
             cmd.data,
             cmd.timestamp,
-            cmd.triggeredBy
+            cmd.triggeredBy,
+            cmd.backendCommandId
         );
     }
 

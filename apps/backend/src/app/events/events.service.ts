@@ -39,13 +39,14 @@ export class EventsService implements OnModuleInit {
 
   async logEvent(event: CommandEvent): Promise<EventLog> {
     this.logger.log(
-      `Logging blockchain event: CommandID=${event.commandId}, Type=${event.commandType}`
+      `Logging blockchain event: CommandID=${event.commandId}, Backend ID=${event.backendCommandId}, Type=${event.commandType}`
     );
 
     const eventLog = new EventLog();
     eventLog.commandId = event.commandId;
     eventLog.timestamp = event.timestamp;
     eventLog.commandType = event.commandType;
+    eventLog.backendCommandId = event.backendCommandId;
     eventLog.blockNumber = event.blockNumber;
     eventLog.transactionHash = event.transactionHash;
     eventLog.eventType = 'command_triggered';
@@ -79,6 +80,7 @@ export class EventsService implements OnModuleInit {
       skip,
       take: limit,
       order: { createdAt: 'DESC' },
+      relations: ['backendCommand'],
     });
 
     return {

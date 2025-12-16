@@ -28,6 +28,11 @@
         "name": "timestamp",
         "type": "uint256",
         "internalType": "uint256"
+      },
+      {
+        "name": "backendCommandId",
+        "type": "string",
+        "internalType": "string"
       }
     ],
     "stateMutability": "view"
@@ -43,6 +48,11 @@
       },
       {
         "name": "data",
+        "type": "string",
+        "internalType": "string"
+      },
+      {
+        "name": "backendCommandId",
         "type": "string",
         "internalType": "string"
       }
@@ -98,6 +108,11 @@
         "name": "triggeredBy",
         "type": "address",
         "internalType": "address"
+      },
+      {
+        "name": "backendCommandId",
+        "type": "string",
+        "internalType": "string"
       }
     ],
     "stateMutability": "view"
@@ -150,6 +165,11 @@
         "name": "triggeredBy",
         "type": "address",
         "internalType": "address"
+      },
+      {
+        "name": "backendCommandId",
+        "type": "string",
+        "internalType": "string"
       }
     ],
     "stateMutability": "view"
@@ -220,6 +240,12 @@
         "type": "uint8",
         "indexed": false,
         "internalType": "enum DeviceControl.CommandType"
+      },
+      {
+        "name": "backendCommandId",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
       }
     ],
     "anonymous": false

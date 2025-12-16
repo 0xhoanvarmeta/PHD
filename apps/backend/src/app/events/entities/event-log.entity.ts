@@ -4,25 +4,35 @@ import {
   Column,
   CreateDateColumn,
   Index,
+  ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { CommandType } from '@phd/shared';
+import { Script } from '../../scripts/entities/script.entity';
 
 @Entity('event_logs')
 export class EventLog {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column({ type: 'bigint', name: 'command_id', transformer: {
-    to: (value: number) => value,
-    from: (value: string) => parseInt(value, 10)
-  } })
+  @Column({
+    type: 'bigint',
+    name: 'command_id',
+    transformer: {
+      to: (value: number) => value,
+      from: (value: string) => parseInt(value, 10),
+    },
+  })
   @Index()
   commandId: number;
 
-  @Column({ type: 'bigint', transformer: {
-    to: (value: number) => value,
-    from: (value: string) => parseInt(value, 10)
-  } })
+  @Column({
+    type: 'bigint',
+    transformer: {
+      to: (value: number) => value,
+      from: (value: string) => parseInt(value, 10),
+    },
+  })
   timestamp: number;
 
   @Column({
@@ -37,6 +47,14 @@ export class EventLog {
 
   @Column({ type: 'varchar', nullable: true, name: 'transaction_hash' })
   transactionHash?: string;
+
+  @Column({ type: 'varchar', nullable: true, name: 'backend_command_id' })
+  @Index()
+  backendCommandId?: string;
+
+  @ManyToOne(() => Script, { onDelete: 'CASCADE' })
+  @JoinColumn({ name: 'backend_command_id' })
+  backendCommand: Script;
 
   @Column({ type: 'text', nullable: true })
   data?: string;

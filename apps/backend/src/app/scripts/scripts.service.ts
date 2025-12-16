@@ -23,7 +23,10 @@ export class ScriptsService {
     private blockchainService: BlockchainService
   ) {}
 
-  async create(createScriptDto: CreateScriptDto, admin: Admin): Promise<Script> {
+  async create(
+    createScriptDto: CreateScriptDto,
+    admin: Admin
+  ): Promise<Script> {
     const script = this.scriptRepository.create({
       ...createScriptDto,
       commandType: createScriptDto.jsonData.commandType,
@@ -125,7 +128,8 @@ export class ScriptsService {
     // Trigger command on blockchain
     const transactionHash = await this.blockchainService.triggerCommand(
       script.commandType,
-      dataString
+      dataString,
+      script.id
     );
 
     this.logger.log(

@@ -9,7 +9,6 @@ import { AdminModule } from './admin/admin.module';
 import { ScriptsModule } from './scripts/scripts.module';
 import { EventsModule } from './events/events.module';
 import { BlockchainModule } from './blockchain/blockchain.module';
-import { CommandsModule } from './commands/commands.module';
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 
 @Module({
@@ -24,7 +23,6 @@ import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
     ScriptsModule,
     EventsModule,
     BlockchainModule,
-    CommandsModule,
   ],
   controllers: [AppController],
   providers: [

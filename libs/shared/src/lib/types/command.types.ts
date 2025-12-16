@@ -13,11 +13,13 @@ export interface Command {
   data: string;
   timestamp: number;
   triggeredBy?: string;
+  backendCommandId?: string;
 }
 
 export interface CommandPayload {
   commandType: CommandType;
   data: string;
+  backendCommandId?: string;
 }
 
 export interface CommandResponse {
@@ -30,6 +32,7 @@ export interface CommandEvent {
   commandId: number;
   timestamp: number;
   commandType: CommandType;
+  backendCommandId: string;
   blockNumber?: number;
   transactionHash?: string;
 }

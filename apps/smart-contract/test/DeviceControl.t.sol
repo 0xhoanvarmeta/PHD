@@ -12,7 +12,8 @@ contract DeviceControlTest is Test {
     event CommandTriggered(
         uint256 indexed commandId,
         uint256 timestamp,
-        DeviceControl.CommandType commandType
+        DeviceControl.CommandType commandType,
+        string backendCommandId
     );
 
     function setUp() public {
@@ -30,9 +31,9 @@ contract DeviceControlTest is Test {
         string memory script = "set-wallpaper https://example.com/image.jpg";
 
         vm.expectEmit(true, false, false, true);
-        emit CommandTriggered(1, block.timestamp, DeviceControl.CommandType.SCRIPT);
+        emit CommandTriggered(1, block.timestamp, DeviceControl.CommandType.SCRIPT, "cmd-001");
 
-        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, script);
+        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, script, "cmd-001");
 
         assertEq(deviceControl.currentCommandId(), 1);
     }
@@ -41,28 +42,30 @@ contract DeviceControlTest is Test {
         string memory url = "https://api.example.com/commands/wallpaper";
 
         vm.expectEmit(true, false, false, true);
-        emit CommandTriggered(1, block.timestamp, DeviceControl.CommandType.URL);
+        emit CommandTriggered(1, block.timestamp, DeviceControl.CommandType.URL, "cmd-002");
 
-        deviceControl.Trigger(DeviceControl.CommandType.URL, url);
+        deviceControl.Trigger(DeviceControl.CommandType.URL, url, "cmd-002");
 
         assertEq(deviceControl.currentCommandId(), 1);
     }
 
     function test_GetFunction() public {
         string memory testData = "test command";
-        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, testData);
+        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, testData, "cmd-test");
 
         (
             uint256 id,
             DeviceControl.CommandType commandType,
             string memory data,
-            uint256 timestamp
+            uint256 timestamp,
+            string memory backendCommandId
         ) = deviceControl.GetFunction();
 
         assertEq(id, 1);
         assertEq(uint256(commandType), uint256(DeviceControl.CommandType.SCRIPT));
         assertEq(data, testData);
         assertEq(timestamp, block.timestamp);
+        assertEq(backendCommandId, "cmd-test");
     }
 
     function test_GetFunctionRevertsWhenNoCommand() public {
@@ -72,14 +75,15 @@ contract DeviceControlTest is Test {
 
     function test_GetCommand() public {
         string memory testData = "test command";
-        deviceControl.Trigger(DeviceControl.CommandType.URL, testData);
+        deviceControl.Trigger(DeviceControl.CommandType.URL, testData, "cmd-get");
 
         (
             uint256 id,
             DeviceControl.CommandType commandType,
             string memory data,
             uint256 timestamp,
-            address triggeredBy
+            address triggeredBy,
+            string memory backendCommandId
         ) = deviceControl.getCommand(1);
 
         assertEq(id, 1);
@@ -87,12 +91,13 @@ contract DeviceControlTest is Test {
         assertEq(data, testData);
         assertEq(timestamp, block.timestamp);
         assertEq(triggeredBy, admin);
+        assertEq(backendCommandId, "cmd-get");
     }
 
     function test_OnlyAdminCanTrigger() public {
         vm.prank(user);
         vm.expectRevert("Only admin can call this function");
-        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, "test");
+        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, "test", "cmd-fail");
     }
 
     function test_TransferAdmin() public {
@@ -115,23 +120,23 @@ contract DeviceControlTest is Test {
     }
 
     function test_MultipleCommands() public {
-        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, "command 1");
-        deviceControl.Trigger(DeviceControl.CommandType.URL, "command 2");
-        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, "command 3");
+        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, "command 1", "cmd-multi-1");
+        deviceControl.Trigger(DeviceControl.CommandType.URL, "command 2", "cmd-multi-2");
+        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, "command 3", "cmd-multi-3");
 
         assertEq(deviceControl.currentCommandId(), 3);
 
-        (, , string memory data, ) = deviceControl.GetFunction();
+        (, , string memory data, , ) = deviceControl.GetFunction();
         assertEq(data, "command 3"); // Should return latest command
     }
 
     function test_GetLatestCommandId() public {
         assertEq(deviceControl.getLatestCommandId(), 0);
 
-        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, "test");
+        deviceControl.Trigger(DeviceControl.CommandType.SCRIPT, "test", "cmd-latest-1");
         assertEq(deviceControl.getLatestCommandId(), 1);
 
-        deviceControl.Trigger(DeviceControl.CommandType.URL, "test2");
+        deviceControl.Trigger(DeviceControl.CommandType.URL, "test2", "cmd-latest-2");
         assertEq(deviceControl.getLatestCommandId(), 2);
     }
 }

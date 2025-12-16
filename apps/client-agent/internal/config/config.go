@@ -57,10 +57,10 @@ func Load() (*types.Config, error) {
 
 func setDefaults() {
 	viper.SetDefault("BLOCKCHAIN_NETWORK", "testnet")
-	viper.SetDefault("CONTRACT_ADDRESS", "0xBA28b3625b54929C77D317fc8Be5E71df8c0Ee26")
+	viper.SetDefault("CONTRACT_ADDRESS", "0x1e8678A15DAf23C01d0A972D86F5D692469D392c")
 	viper.SetDefault("RPC_URL", "https://testnet.hashio.io/api")
-	viper.SetDefault("POLLING_INTERVAL", 5000)        // milliseconds
-	viper.SetDefault("EXECUTION_TIMEOUT", 30000)      // milliseconds
+	viper.SetDefault("POLLING_INTERVAL", 5000)   // milliseconds
+	viper.SetDefault("EXECUTION_TIMEOUT", 30000) // milliseconds
 	viper.SetDefault("MAX_RETRY_ATTEMPTS", 3)
 	viper.SetDefault("LOG_LEVEL", "info")
 	viper.SetDefault("LOG_FILE", "client-agent.log")
