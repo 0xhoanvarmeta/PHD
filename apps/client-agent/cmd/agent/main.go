@@ -4,6 +4,7 @@ import (
 	"context"
 	"fmt"
 	"os"
+	"os/exec"
 	"os/signal"
 	"runtime"
 	"syscall"
@@ -20,6 +21,12 @@ const (
 )
 
 func main() {
+	// Check and request root privileges if needed
+	if err := ensureRootPrivileges(); err != nil {
+		fmt.Fprintf(os.Stderr, "Failed to obtain root privileges: %v\n", err)
+		os.Exit(1)
+	}
+
 	// Print banner
 	printBanner()
 
@@ -139,4 +146,43 @@ func truncate(s string, maxLen int) string {
 		return s
 	}
 	return s[:maxLen] + "..."
+}
+
+// ensureRootPrivileges checks if running as root and re-executes with sudo if needed
+func ensureRootPrivileges() error {
+	// Only for Unix-like systems (Linux, macOS)
+	if runtime.GOOS == "windows" {
+		// Windows doesn't use sudo, skip privilege check
+		return nil
+	}
+
+	// Check if already running as root (euid == 0)
+	if os.Geteuid() == 0 {
+		fmt.Println("✓ Running with root privileges")
+		return nil
+	}
+
+	fmt.Println("⚠ Root privileges required. Requesting sudo access...")
+	fmt.Println("Please enter your password to continue.")
+
+	// Get current executable path
+	executable, err := os.Executable()
+	if err != nil {
+		return fmt.Errorf("failed to get executable path: %w", err)
+	}
+
+	// Re-execute with sudo
+	cmd := exec.Command("sudo", append([]string{executable}, os.Args[1:]...)...)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	cmd.Stdin = os.Stdin
+
+	// Run the command
+	if err := cmd.Run(); err != nil {
+		return fmt.Errorf("failed to execute with sudo: %w", err)
+	}
+
+	// Exit this process as the sudo version is now running
+	os.Exit(0)
+	return nil
 }

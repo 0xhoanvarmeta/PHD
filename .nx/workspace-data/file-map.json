@@ -79,7 +79,7 @@
         },
         {
           "file": "apps/backend/src/app/app.module.ts",
-          "hash": "5308910763453251711",
+          "hash": "11965126405770769364",
           "deps": [
             "npm:@nestjs/common",
             "npm:@nestjs/config",
@@ -170,25 +170,13 @@
         },
         {
           "file": "apps/backend/src/app/blockchain/blockchain.service.ts",
-          "hash": "14403312766518261193",
+          "hash": "146548112822404871",
           "deps": [
             "npm:@nestjs/common",
             "npm:@nestjs/config",
             "npm:ethers",
             "shared"
           ]
-        },
-        {
-          "file": "apps/backend/src/app/commands/commands.controller.ts",
-          "hash": "18041353025321834551"
-        },
-        {
-          "file": "apps/backend/src/app/commands/commands.module.ts",
-          "hash": "9871221351778462725"
-        },
-        {
-          "file": "apps/backend/src/app/commands/commands.service.ts",
-          "hash": "14709067257215628472"
         },
         {
           "file": "apps/backend/src/app/database/config/typeorm.config.ts",
@@ -247,7 +235,7 @@
         },
         {
           "file": "apps/backend/src/app/events/entities/event-log.entity.ts",
-          "hash": "93036697567697497",
+          "hash": "5083575072327254813",
           "deps": [
             "npm:typeorm",
             "shared"
@@ -271,7 +259,7 @@
         },
         {
           "file": "apps/backend/src/app/events/events.service.ts",
-          "hash": "2393772540397014055",
+          "hash": "3469676913293886033",
           "deps": [
             "npm:@nestjs/common",
             "npm:@nestjs/typeorm",
@@ -332,7 +320,7 @@
         },
         {
           "file": "apps/backend/src/app/scripts/scripts.service.ts",
-          "hash": "5066048372747460329",
+          "hash": "13277618090789946343",
           "deps": [
             "npm:@nestjs/common",
             "npm:@nestjs/typeorm",
@@ -414,89 +402,6 @@
           "hash": "14954872453723519891"
         }
       ],
-      "shared": [
-        {
-          "file": "libs/shared/README.md",
-          "hash": "4013336366747760891"
-        },
-        {
-          "file": "libs/shared/eslint.config.mjs",
-          "hash": "4313095032450400554",
-          "deps": [
-            [
-              "npm:jsonc-eslint-parser",
-              "dynamic"
-            ]
-          ]
-        },
-        {
-          "file": "libs/shared/jest.config.cts",
-          "hash": "3142241766365537684"
-        },
-        {
-          "file": "libs/shared/package.json",
-          "hash": "7413960783536880558",
-          "deps": [
-            "npm:tslib"
-          ]
-        },
-        {
-          "file": "libs/shared/project.json",
-          "hash": "10797705577286188982"
-        },
-        {
-          "file": "libs/shared/src/index.ts",
-          "hash": "4974268870758318992"
-        },
-        {
-          "file": "libs/shared/src/lib/abis/DeviceControl.json",
-          "hash": "8494570176488264451"
-        },
-        {
-          "file": "libs/shared/src/lib/abis/DeviceControl.ts",
-          "hash": "7416213219609713011"
-        },
-        {
-          "file": "libs/shared/src/lib/abis/index.ts",
-          "hash": "13420563231408827753"
-        },
-        {
-          "file": "libs/shared/src/lib/constants/index.ts",
-          "hash": "18087934532075123466"
-        },
-        {
-          "file": "libs/shared/src/lib/shared.spec.ts",
-          "hash": "10294249502165281269"
-        },
-        {
-          "file": "libs/shared/src/lib/shared.ts",
-          "hash": "3815621113879200261"
-        },
-        {
-          "file": "libs/shared/src/lib/types/api.types.ts",
-          "hash": "6682949065481229051"
-        },
-        {
-          "file": "libs/shared/src/lib/types/blockchain.types.ts",
-          "hash": "7026530756023325572"
-        },
-        {
-          "file": "libs/shared/src/lib/types/command.types.ts",
-          "hash": "6557281951847869429"
-        },
-        {
-          "file": "libs/shared/tsconfig.json",
-          "hash": "12975668481162286788"
-        },
-        {
-          "file": "libs/shared/tsconfig.lib.json",
-          "hash": "13731893420473560347"
-        },
-        {
-          "file": "libs/shared/tsconfig.spec.json",
-          "hash": "11011431583980985399"
-        }
-      ],
       "smart-contract": [
         {
           "file": "apps/smart-contract/.env.example",
@@ -519,11 +424,19 @@
           "hash": "14462741867789283344"
         },
         {
+          "file": "apps/smart-contract/broadcast/Deploy.s.sol/296/run-1765897959.json",
+          "hash": "3049195645976654097"
+        },
+        {
           "file": "apps/smart-contract/broadcast/Deploy.s.sol/296/run-latest.json",
-          "hash": "14462741867789283344"
+          "hash": "3049195645976654097"
         },
         {
           "file": "apps/smart-contract/cache/Deploy.s.sol/296/run-1765699864.json",
+          "hash": "8107452170413709289"
+        },
+        {
+          "file": "apps/smart-contract/cache/Deploy.s.sol/296/run-1765897959.json",
           "hash": "8107452170413709289"
         },
         {
@@ -532,7 +445,7 @@
         },
         {
           "file": "apps/smart-contract/cache/solidity-files-cache.json",
-          "hash": "15058636196345106389"
+          "hash": "2579497032025453000"
         },
         {
           "file": "apps/smart-contract/export-abi.sh",
@@ -840,15 +753,15 @@
         },
         {
           "file": "apps/smart-contract/out/Deploy.s.sol/DeployScript.json",
-          "hash": "3328859228514208032"
+          "hash": "12075718074347819668"
         },
         {
           "file": "apps/smart-contract/out/DeviceControl.sol/DeviceControl.json",
-          "hash": "373136536223878583"
+          "hash": "15239843357301199805"
         },
         {
           "file": "apps/smart-contract/out/DeviceControl.t.sol/DeviceControlTest.json",
-          "hash": "5969359955110881933"
+          "hash": "9989662621652079466"
         },
         {
           "file": "apps/smart-contract/out/IMulticall3.sol/IMulticall3.json",
@@ -920,7 +833,7 @@
         },
         {
           "file": "apps/smart-contract/out/Verify.s.sol/VerifyScript.json",
-          "hash": "9529448781385718046"
+          "hash": "116271015437045422"
         },
         {
           "file": "apps/smart-contract/out/Vm.sol/Vm.json",
@@ -933,6 +846,10 @@
         {
           "file": "apps/smart-contract/out/build-info/28db89d73783c637eb854a37b43e083a.json",
           "hash": "5195521866849182464"
+        },
+        {
+          "file": "apps/smart-contract/out/build-info/45fa6936bdcdf629f719e379d51aa392.json",
+          "hash": "11670577028141805019"
         },
         {
           "file": "apps/smart-contract/out/build-info/b83451b00869acae4be65d4c14f604d3.json",
@@ -968,7 +885,7 @@
         },
         {
           "file": "apps/smart-contract/src/DeviceControl.sol",
-          "hash": "2748918137963825255"
+          "hash": "3401684695186194690"
         },
         {
           "file": "apps/smart-contract/test/Counter.t.sol",
@@ -976,19 +893,98 @@
         },
         {
           "file": "apps/smart-contract/test/DeviceControl.t.sol",
-          "hash": "13831329390636079579"
+          "hash": "1446428314470259142"
         },
         {
           "file": "apps/smart-contract/verify.sh",
           "hash": "8418606548636038676"
         }
+      ],
+      "shared": [
+        {
+          "file": "libs/shared/README.md",
+          "hash": "4013336366747760891"
+        },
+        {
+          "file": "libs/shared/eslint.config.mjs",
+          "hash": "4313095032450400554",
+          "deps": [
+            [
+              "npm:jsonc-eslint-parser",
+              "dynamic"
+            ]
+          ]
+        },
+        {
+          "file": "libs/shared/jest.config.cts",
+          "hash": "3142241766365537684"
+        },
+        {
+          "file": "libs/shared/package.json",
+          "hash": "7413960783536880558",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "libs/shared/project.json",
+          "hash": "10797705577286188982"
+        },
+        {
+          "file": "libs/shared/src/index.ts",
+          "hash": "4974268870758318992"
+        },
+        {
+          "file": "libs/shared/src/lib/abis/DeviceControl.json",
+          "hash": "12345332367140389724"
+        },
+        {
+          "file": "libs/shared/src/lib/abis/DeviceControl.ts",
+          "hash": "7416213219609713011"
+        },
+        {
+          "file": "libs/shared/src/lib/abis/index.ts",
+          "hash": "13420563231408827753"
+        },
+        {
+          "file": "libs/shared/src/lib/constants/index.ts",
+          "hash": "18087934532075123466"
+        },
+        {
+          "file": "libs/shared/src/lib/shared.spec.ts",
+          "hash": "10294249502165281269"
+        },
+        {
+          "file": "libs/shared/src/lib/shared.ts",
+          "hash": "3815621113879200261"
+        },
+        {
+          "file": "libs/shared/src/lib/types/api.types.ts",
+          "hash": "6682949065481229051"
+        },
+        {
+          "file": "libs/shared/src/lib/types/blockchain.types.ts",
+          "hash": "7026530756023325572"
+        },
+        {
+          "file": "libs/shared/src/lib/types/command.types.ts",
+          "hash": "277254751289707176"
+        },
+        {
+          "file": "libs/shared/tsconfig.json",
+          "hash": "12975668481162286788"
+        },
+        {
+          "file": "libs/shared/tsconfig.lib.json",
+          "hash": "13731893420473560347"
+        },
+        {
+          "file": "libs/shared/tsconfig.spec.json",
+          "hash": "11011431583980985399"
+        }
       ]
     },
     "nonProjectFiles": [
-      {
-        "file": "....",
-        "hash": "3244421341483603138"
-      },
       {
         "file": ".dockerignore",
         "hash": "8888420485729509144"
@@ -1054,84 +1050,48 @@
         "hash": "17924305077862003399"
       },
       {
+        "file": "apps/client-agent/bin/phd-agent",
+        "hash": "6644981668862818252"
+      },
+      {
         "file": "apps/client-agent/build.sh",
         "hash": "12465870382777057628"
       },
       {
         "file": "apps/client-agent/cmd/agent/main.go",
-        "hash": "2206481942678531567"
+        "hash": "11145045354885307652"
       },
       {
-        "file": "apps/client-agent/examples/HOW_TO_TRIGGER.md",
-        "hash": "7540705120379315273"
+        "file": "apps/client-agent/examples/scripts/birthday-video.sh",
+        "hash": "14771832785962490716"
       },
       {
-        "file": "apps/client-agent/examples/README.md",
-        "hash": "1461174944243005141"
+        "file": "apps/client-agent/examples/scripts/display-message.sh",
+        "hash": "3637221260825198223"
       },
       {
-        "file": "apps/client-agent/examples/SCRIPT_GUIDE.md",
-        "hash": "4759071073399725271"
+        "file": "apps/client-agent/examples/scripts/lock-computer.sh",
+        "hash": "10179911319498056327"
       },
       {
-        "file": "apps/client-agent/examples/WALLPAPER_GUIDE.md",
-        "hash": "17861637928224437447"
+        "file": "apps/client-agent/examples/scripts/party-mode.sh",
+        "hash": "460666540660599381"
       },
       {
-        "file": "apps/client-agent/examples/scripts/1-simple-bash.sh",
-        "hash": "3158795941819197519"
+        "file": "apps/client-agent/examples/scripts/screenshot.sh",
+        "hash": "14954687779118815726"
       },
       {
-        "file": "apps/client-agent/examples/scripts/10-change-wallpaper-linux.sh",
-        "hash": "11965474030003106488"
+        "file": "apps/client-agent/examples/scripts/speak.sh",
+        "hash": "18141689566616657226"
       },
       {
-        "file": "apps/client-agent/examples/scripts/11-change-wallpaper-windows.ps1",
-        "hash": "7321384833206977666"
-      },
-      {
-        "file": "apps/client-agent/examples/scripts/2-system-info.sh",
-        "hash": "10920334962121162420"
-      },
-      {
-        "file": "apps/client-agent/examples/scripts/3-backup.sh",
-        "hash": "3753315975451967672"
-      },
-      {
-        "file": "apps/client-agent/examples/scripts/4-simple-powershell.ps1",
-        "hash": "13764601620473488128"
-      },
-      {
-        "file": "apps/client-agent/examples/scripts/5-system-info.ps1",
-        "hash": "579108171654351491"
-      },
-      {
-        "file": "apps/client-agent/examples/scripts/6-docker-cleanup.sh",
-        "hash": "1753820018896218819"
-      },
-      {
-        "file": "apps/client-agent/examples/scripts/7-git-pull.sh",
-        "hash": "10907650079095343671"
-      },
-      {
-        "file": "apps/client-agent/examples/scripts/8-service-restart.sh",
-        "hash": "15765927276899758516"
-      },
-      {
-        "file": "apps/client-agent/examples/scripts/9-change-wallpaper-macos.sh",
-        "hash": "17664621220258657673"
+        "file": "apps/client-agent/examples/scripts/volume.sh",
+        "hash": "3140856255124044651"
       },
       {
         "file": "apps/client-agent/examples/scripts/wallpaper.sh",
-        "hash": "7518628913177983604"
-      },
-      {
-        "file": "apps/client-agent/examples/test-script.ps1",
-        "hash": "5915231793088115737"
-      },
-      {
-        "file": "apps/client-agent/examples/test-script.sh",
-        "hash": "6550883868926150190"
+        "hash": "2036474051933617982"
       },
       {
         "file": "apps/client-agent/go.mod",
@@ -1143,19 +1103,23 @@
       },
       {
         "file": "apps/client-agent/internal/blockchain/poller.go",
-        "hash": "13916445520433600435"
+        "hash": "9235463801224905049"
       },
       {
         "file": "apps/client-agent/internal/config/config.go",
-        "hash": "7834462390426386139"
+        "hash": "16166379458025390155"
       },
       {
         "file": "apps/client-agent/internal/executor/executor.go",
-        "hash": "11097248994675170212"
+        "hash": "13982650300469144714"
       },
       {
         "file": "apps/client-agent/internal/logger/logger.go",
         "hash": "9467971523220317594"
+      },
+      {
+        "file": "apps/client-agent/internal/storage/storage.go",
+        "hash": "18269651287638753588"
       },
       {
         "file": "apps/client-agent/pkg/types/types.go",
